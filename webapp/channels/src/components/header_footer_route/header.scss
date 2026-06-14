@@ -46,6 +46,13 @@
                 fill: var(--center-channel-color);
             }
 
+            .lexocrates-header-logo {
+                width: 190px;
+                height: 42px;
+                object-fit: contain;
+                object-position: left center;
+            }
+
             .freeBadge {
                 position: relative;
                 top: 1px;
@@ -98,6 +105,11 @@
         .header-main {
             .header-logo-link svg {
                 width: 145px;
+            }
+
+            .header-logo-link .lexocrates-header-logo {
+                width: 158px;
+                height: 36px;
             }
         }
 

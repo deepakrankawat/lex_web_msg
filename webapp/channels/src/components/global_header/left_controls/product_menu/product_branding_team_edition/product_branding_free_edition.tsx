@@ -7,8 +7,7 @@ import styled from 'styled-components';
 
 import {getLicense} from 'mattermost-redux/selectors/entities/general';
 
-import Logo from 'components/common/svg_images_components/logo_dark_blue_svg';
-
+import LexocratesLogoHorizontalLight from 'images/lexocrates-logo-horizontal-light.png';
 import {LicenseSkus} from 'utils/constants';
 
 const ProductBrandingFreeEditionContainer = styled.span`
@@ -20,10 +19,12 @@ const ProductBrandingFreeEditionContainer = styled.span`
     }
 `;
 
-const StyledLogo = styled(Logo)`
-    path {
-        fill: rgba(var(--sidebar-text-rgb), 0.75);
-    }
+const StyledLogo = styled.img`
+    width: 116px;
+    height: 24px;
+    object-fit: contain;
+    object-position: left center;
+    opacity: 0.9;
 `;
 
 const Badge = styled.span`
@@ -54,8 +55,8 @@ const ProductBrandingFreeEdition = (): JSX.Element => {
     return (
         <ProductBrandingFreeEditionContainer tabIndex={-1}>
             <StyledLogo
-                width={116}
-                height={20}
+                src={LexocratesLogoHorizontalLight}
+                alt='Lexocrates Connect'
             />
             <Badge>{badgeText}</Badge>
         </ProductBrandingFreeEditionContainer>

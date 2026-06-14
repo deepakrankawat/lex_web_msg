@@ -9,8 +9,8 @@ import {Link} from 'react-router-dom';
 import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
 
 import BackButton from 'components/common/back_button';
-import Logo from 'components/common/svg_images_components/logo_dark_blue_svg';
 
+import LexocratesLogoHorizontal from 'images/lexocrates-logo-horizontal.png';
 import './header.scss';
 import {LicenseSkus} from 'utils/constants';
 
@@ -24,21 +24,28 @@ const Header = ({alternateLink, backButtonURL, onBackButtonClick}: HeaderProps) 
     const {SiteName} = useSelector(getConfig);
     const license = useSelector(getLicense);
 
-    const ariaLabel = SiteName || 'Mattermost';
+    const ariaLabel = SiteName || 'Lexocrates Connect';
+    const logo = (
+        <img
+            className='lexocrates-header-logo'
+            src={LexocratesLogoHorizontal}
+            alt=''
+        />
+    );
 
     let freeBanner = null;
     if (license.IsLicensed === 'false') {
-        freeBanner = <><Logo/><span className='freeBadge'>{'TEAM EDITION'}</span></>;
+        freeBanner = <>{logo}<span className='freeBadge'>{'TEAM EDITION'}</span></>;
     } else if (license.SkuShortName === LicenseSkus.Entry) {
-        freeBanner = <><Logo/><span className='freeBadge'>{'ENTRY EDITION'}</span></>;
+        freeBanner = <>{logo}<span className='freeBadge'>{'ENTRY EDITION'}</span></>;
     }
 
     let title: React.ReactNode = SiteName;
-    if (title === 'Mattermost') {
+    if (title === 'Lexocrates Connect') {
         if (freeBanner) {
             title = '';
         } else {
-            title = <Logo/>;
+            title = logo;
         }
     }
 

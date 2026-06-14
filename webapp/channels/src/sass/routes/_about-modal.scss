@@ -82,6 +82,13 @@
             opacity: 0.73;
         }
 
+        .about-modal__powered-by {
+            margin: -4px 0 8px;
+            color: rgba(var(--center-channel-color-rgb), 0.64);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
         .about-modal__hash {
             overflow: hidden;
             font-size: 0.75em;
@@ -115,6 +122,12 @@
             svg {
                 width: 125px;
                 height: 125px;
+            }
+
+            img {
+                width: 125px;
+                height: 125px;
+                object-fit: contain;
             }
 
             path {

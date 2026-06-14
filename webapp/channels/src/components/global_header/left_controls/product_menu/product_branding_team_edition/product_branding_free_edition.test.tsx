@@ -29,7 +29,7 @@ describe('ProductBrandingFreeEdition', () => {
         );
 
         expect(screen.getByText('ENTRY EDITION')).toBeInTheDocument();
-        const logoElement = container.querySelector('svg');
+        const logoElement = container.querySelector('img[alt="Lexocrates Connect"]');
         expect(logoElement).toBeInTheDocument();
     });
 
@@ -51,7 +51,7 @@ describe('ProductBrandingFreeEdition', () => {
         );
 
         expect(screen.getByText('TEAM EDITION')).toBeInTheDocument();
-        const logoElement = container.querySelector('svg');
+        const logoElement = container.querySelector('img[alt="Lexocrates Connect"]');
         expect(logoElement).toBeInTheDocument();
     });
 

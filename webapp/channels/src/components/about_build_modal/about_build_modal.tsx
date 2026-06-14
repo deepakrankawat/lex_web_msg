@@ -13,8 +13,8 @@ import {Client4} from 'mattermost-redux/client';
 import CopyButton from 'components/copy_button';
 import ExternalLink from 'components/external_link';
 import Nbsp from 'components/html_entities/nbsp';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
 
+import LexocratesLogo from 'images/lexocrates-logo.png';
 import {AboutLinks} from 'utils/constants';
 import {getSkuDisplayName} from 'utils/subscription';
 
@@ -318,7 +318,7 @@ export default function AboutBuildModal(props: Props) {
                     <FormattedMessage
                         id='about.title'
                         values={{
-                            appTitle: config.SiteName || 'Mattermost',
+                            appTitle: config.SiteName || 'Lexocrates Connect',
                         }}
                         defaultMessage='About {appTitle}'
                     />
@@ -327,14 +327,18 @@ export default function AboutBuildModal(props: Props) {
             <Modal.Body>
                 <div className='about-modal__content'>
                     <div className='about-modal__logo'>
-                        <MattermostLogo/>
+                        <img
+                            src={LexocratesLogo}
+                            alt='Lexocrates Connect'
+                        />
                     </div>
                     <div>
                         <h3 className='about-modal__title'>
-                            <strong>
-                                {'Mattermost'} {title}
-                            </strong>
+                            <strong>{'Lexocrates Connect'}</strong>
                         </h3>
+                        <p className='about-modal__powered-by'>
+                            {'Powered by Mattermost '}{title}
+                        </p>
                         <p className='about-modal__subtitle pb-2'>
                             {subTitle}
                         </p>

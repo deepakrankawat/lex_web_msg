@@ -140,7 +140,7 @@ const (
 	ServiceSettingsDefaultMaxURLLength           = 2048
 	ServiceSettingsMaxUniqueReactionsPerPost     = 500
 
-	TeamSettingsDefaultSiteName              = "Mattermost"
+	TeamSettingsDefaultSiteName              = "Lexocrates Connect"
 	TeamSettingsDefaultMaxUsersPerTeam       = 50
 	TeamSettingsDefaultCustomBrandText       = ""
 	TeamSettingsDefaultCustomDescriptionText = ""
@@ -164,14 +164,14 @@ const (
 	ExportSettingsDefaultDirectory     = "./export"
 	ExportSettingsDefaultRetentionDays = 30
 
-	EmailSettingsDefaultFeedbackOrganization = ""
+	EmailSettingsDefaultFeedbackOrganization = "Lexocrates Legal Services Pvt. Ltd."
 
 	SupportSettingsDefaultTermsOfServiceLink = "https://mattermost.com/pl/terms-of-use/"
 	SupportSettingsDefaultPrivacyPolicyLink  = "https://mattermost.com/pl/privacy-policy/"
 	SupportSettingsDefaultAboutLink          = "https://mattermost.com/pl/about-mattermost"
 	SupportSettingsDefaultHelpLink           = "https://mattermost.com/pl/help/"
 	SupportSettingsDefaultReportAProblemLink = "https://mattermost.com/pl/report-a-bug"
-	SupportSettingsDefaultSupportEmail       = ""
+	SupportSettingsDefaultSupportEmail       = "it@lexocrates.com"
 	SupportSettingsDefaultReAcceptancePeriod = 365
 
 	SupportSettingsReportAProblemTypeLink    = "link"

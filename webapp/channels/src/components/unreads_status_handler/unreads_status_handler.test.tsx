@@ -85,7 +85,7 @@ describe('components/UnreadsStatusHandler', () => {
             currentTeammate: {} as Props['currentTeammate'],
         };
         rerender(<UnreadsStatusHandler {...currentProps}/>);
-        expect(document.title).toBe('Mattermost - Join a team');
+        expect(document.title).toBe('Lexocrates Connect - Join a team');
 
         currentProps = {
             ...currentProps,

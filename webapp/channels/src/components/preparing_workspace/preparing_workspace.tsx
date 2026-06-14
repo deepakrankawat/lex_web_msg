@@ -19,8 +19,7 @@ import {getCurrentTeam, getMyTeams} from 'mattermost-redux/selectors/entities/te
 import {isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
 import type {ActionResult} from 'mattermost-redux/types/actions';
 
-import LogoSvg from 'components/common/svg_images_components/logo_dark_blue_svg';
-
+import LexocratesLogoHorizontal from 'images/lexocrates-logo-horizontal.png';
 import Constants from 'utils/constants';
 import {makeNewTeam} from 'utils/team_utils';
 import {getSiteURL, teamNameToUrl} from 'utils/url';
@@ -373,7 +372,10 @@ const PreparingWorkspace = ({
             )}
             {background}
             <div className='PreparingWorkspace__logo'>
-                <LogoSvg/>
+                <img
+                    src={LexocratesLogoHorizontal}
+                    alt='Lexocrates Connect'
+                />
             </div>
             <Progress
                 step={currentStep}
