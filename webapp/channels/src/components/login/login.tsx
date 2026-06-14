@@ -46,6 +46,8 @@ import LoginOpenIDIcon from 'components/widgets/icons/login_openid_icon';
 import Input, {SIZE} from 'components/widgets/inputs/input/input';
 import PasswordInput from 'components/widgets/inputs/password_input/password_input';
 
+import LexocratesLogoHorizontal from 'images/lexocrates-logo-horizontal.png';
+
 import Constants from 'utils/constants';
 import DesktopApp from 'utils/desktop_api';
 import {isEmbedded} from 'utils/embed';
@@ -867,7 +869,22 @@ const Login = ({onCustomizeHeader}: LoginProps) => {
 
         return (
             <p className='login-body-message-subtitle'>
-                {formatMessage({id: 'login.subtitle', defaultMessage: 'Collaborate with your team in real-time'})}
+                {formatMessage({id: 'login.subtitle', defaultMessage: 'Secure Internal Communication for Legal Operations'})}
+            </p>
+        );
+    };
+
+    const getConfidentialityNotice = () => {
+        if (enableCustomBrand) {
+            return null;
+        }
+
+        return (
+            <p className='login-body-confidentiality-notice'>
+                {formatMessage({
+                    id: 'login.confidentialityNotice',
+                    defaultMessage: 'Authorized access only. All communications, files, matter discussions, client data, and legal work product shared on this platform are confidential and subject to Lexocrates confidentiality and IT/data-security policies.',
+                })}
             </p>
         );
     };
@@ -958,11 +975,19 @@ const Login = ({onCustomizeHeader}: LoginProps) => {
                             onError={handleBrandImageError}
                         />
                     ) : (
-                        <h1 className='login-body-message-title'>
-                            {formatMessage({id: 'login.title', defaultMessage: 'Log in to your account'})}
-                        </h1>
+                        <>
+                            <img
+                                className='login-body-lexocrates-logo'
+                                src={LexocratesLogoHorizontal}
+                                alt={formatMessage({id: 'login.productName', defaultMessage: 'Lexocrates Connect'})}
+                            />
+                            <h1 className='login-body-message-title'>
+                                {formatMessage({id: 'login.productName', defaultMessage: 'Lexocrates Connect'})}
+                            </h1>
+                        </>
                     )}
                     {getMessageSubtitle()}
+                    {getConfidentialityNotice()}
                 </div>
                 <div className='login-body-action'>
                     {!isMobileView && getAlternateLink()}

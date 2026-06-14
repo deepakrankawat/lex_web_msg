@@ -43,14 +43,41 @@
             flex-flow: column;
             align-self: flex-start;
 
+            .login-body-lexocrates-logo {
+                width: min(410px, 100%);
+                height: auto;
+                margin-bottom: 36px;
+                object-fit: contain;
+                object-position: left center;
+            }
+
             .login-body-message-title {
                 padding-right: 24px;
-                color: var(--title-color-indigo-500);
+                margin: 0 0 12px;
+                color: #192a57;
                 font-family: Metropolis;
-                font-size: 80px;
+                font-size: 48px;
                 font-weight: 600;
                 letter-spacing: -0.01em;
-                line-height: 88px;
+                line-height: 56px;
+            }
+
+            .login-body-message-subtitle {
+                margin: 0;
+                color: #243b7a;
+                font-weight: 600;
+            }
+
+            .login-body-confidentiality-notice {
+                max-width: 500px;
+                padding: 16px 18px;
+                border-left: 4px solid #c9a227;
+                border-radius: 0 8px 8px 0;
+                margin: 28px 0 0;
+                background: rgba(25, 42, 87, 0.06);
+                color: #1f2937;
+                font-size: 13px;
+                line-height: 20px;
             }
 
             .login-body-message-svg {
@@ -231,7 +258,6 @@
 
         .login-body-message .login-body-message-title {
             padding-right: 80px;
-            margin-top: 48px;
         }
     }
 }
@@ -256,8 +282,13 @@
 
                 .login-body-message-title {
                     padding-right: 80px;
-                    font-size: 64px;
-                    line-height: 76px;
+                    font-size: 40px;
+                    line-height: 48px;
+                }
+
+                .login-body-lexocrates-logo {
+                    width: 340px;
+                    margin-bottom: 24px;
                 }
 
                 .login-body-message-subtitle {
@@ -346,8 +377,17 @@
 
                 .login-body-message-title {
                     padding-right: 0;
-                    font-size: 45px;
-                    line-height: 56px;
+                    font-size: 34px;
+                    line-height: 42px;
+                }
+
+                .login-body-lexocrates-logo {
+                    width: 270px;
+                }
+
+                .login-body-confidentiality-notice {
+                    padding: 12px 14px;
+                    margin-top: 20px;
                 }
             }
         }
