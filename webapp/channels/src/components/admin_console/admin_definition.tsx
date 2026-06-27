@@ -6926,4 +6926,40 @@ const AdminDefinition: AdminDefinitionType = {
     },
 };
 
-export default AdminDefinition;
+const TEAM_EDITION_HIDDEN_SECTIONS = new Set([
+    'compliance',
+]);
+
+const TEAM_EDITION_HIDDEN_SUBSECTIONS: Record<string, Set<string>> = {
+    about: new Set([
+        'license',
+    ]),
+    authentication: new Set([
+        'ldap',
+        'ldap_feature_discovery',
+        'saml',
+        'saml_feature_discovery',
+        'openid',
+        'openid_feature_discovery',
+    ]),
+};
+
+export const filterTeamEditionAdminDefinition = (definition: AdminDefinitionType): AdminDefinitionType => {
+    const sections = Object.entries(definition).
+        filter(([sectionKey]) => !TEAM_EDITION_HIDDEN_SECTIONS.has(sectionKey)).
+        map(([sectionKey, section]) => {
+            const hiddenSubsections = TEAM_EDITION_HIDDEN_SUBSECTIONS[sectionKey];
+            const subsections = Object.fromEntries(
+                Object.entries(section.subsections).filter(([subsectionKey, subsection]) => (
+                    !subsection.isDiscovery && !hiddenSubsections?.has(subsectionKey)
+                )),
+            );
+
+            return [sectionKey, {...section, subsections}] as const;
+        }).
+        filter(([, section]) => Object.keys(section.subsections).length > 0);
+
+    return Object.fromEntries(sections);
+};
+
+export default filterTeamEditionAdminDefinition(AdminDefinition);

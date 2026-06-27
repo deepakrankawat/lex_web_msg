@@ -6,10 +6,6 @@ import {useIntl} from 'react-intl';
 import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 
-import {
-    ProductsIcon,
-} from '@mattermost/compass-icons/components';
-
 import {isFreeEdition as isFreeEditionSelector} from 'mattermost-redux/selectors/entities/general';
 
 import {setProductMenuSwitcherOpen} from 'actions/views/product_menu';
@@ -52,7 +48,7 @@ export const ProductMenuButton = styled.button.attrs(() => ({
     background: transparent;
     border: none;
     border-radius: 4px;
-    padding: 3px 6px 3px 5px;
+    padding: 3px 8px;
 
     &:hover, &:focus {
         color: rgba(var(--sidebar-text-rgb), 0.56);
@@ -128,10 +124,6 @@ const ProductMenu = (): JSX.Element => {
                             color: 'rgba(var(--sidebar-text-rgb), 0.56)',
                         } : {}}
                     >
-                        <ProductsIcon
-                            size={20}
-                            color='rgba(var(--sidebar-text-rgb), 0.56)'
-                        />
                         {isFreeEdition ? (
                             <ProductBrandingFreeEdition/>
                         ) : (

@@ -91,21 +91,7 @@ function extractTextFromSettings(settings: AdminDefinitionSetting[], intl: IntlS
 
 export function adminDefinitionsToUrlsAndTexts(adminDefinition: typeof AdminDefinition, intl: IntlShape) {
     const entries: Record<string, Array<string | string[]>> = {};
-    const sections = [
-        adminDefinition.about,
-        adminDefinition.reporting,
-        adminDefinition.user_management,
-        adminDefinition.system_attributes,
-        adminDefinition.environment,
-        adminDefinition.site,
-        adminDefinition.authentication,
-        adminDefinition.plugins,
-        adminDefinition.integrations,
-        adminDefinition.compliance,
-        adminDefinition.experimental,
-        adminDefinition.billing,
-    ];
-    for (const section of sections) {
+    for (const section of Object.values(adminDefinition)) {
         for (const item of Object.values(section.subsections)) {
             if (!item.isDiscovery) {
                 entries[item.url] = extractTextsFromSection(item, intl);

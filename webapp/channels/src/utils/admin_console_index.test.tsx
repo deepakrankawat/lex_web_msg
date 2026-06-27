@@ -20,14 +20,11 @@ describe('AdminConsoleIndex.generateIndex', () => {
         expect(idx.search('ldap')).toEqual([
             'environment/session_lengths',
             'authentication/mfa',
-            'authentication/saml',
             'experimental/features',
             'authentication/email',
-            'authentication/ldap',
             'authentication/guest_access',
         ]);
         expect(idx.search('saml')).toEqual([
-            'authentication/saml',
             'environment/session_lengths',
             'environment/mobile_security',
             'authentication/email',

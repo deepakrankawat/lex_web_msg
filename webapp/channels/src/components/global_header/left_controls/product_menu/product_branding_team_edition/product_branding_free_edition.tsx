@@ -2,63 +2,29 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
-import {useSelector} from 'react-redux';
 import styled from 'styled-components';
 
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
-
 import LexocratesLogoHorizontalLight from 'images/lexocrates-logo-horizontal-light.png';
-import {LicenseSkus} from 'utils/constants';
 
 const ProductBrandingFreeEditionContainer = styled.span`
     display: flex;
     align-items: center;
-
-    > * + * {
-        margin-left: 8px;
-    }
 `;
 
 const StyledLogo = styled.img`
-    width: 116px;
-    height: 24px;
-    object-fit: contain;
-    object-position: left center;
-    opacity: 0.9;
-`;
-
-const Badge = styled.span`
-    display: flex;
-    align-self: center;
-    padding: 2px 6px;
-    border-radius: var(--radius-s);
-    margin-left: 12px;
-    background: rgba(var(--sidebar-text-rgb), 0.08);
-    color: rgba(var(--sidebar-text-rgb), 0.75);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.025em;
-    line-height: 16px;
+    display: block;
+    width: clamp(120px, 10vw, 142px);
+    height: auto;
+    opacity: 1;
 `;
 
 const ProductBrandingFreeEdition = (): JSX.Element => {
-    const license = useSelector(getLicense);
-
-    let badgeText = '';
-    if (license?.SkuShortName === LicenseSkus.Entry) {
-        badgeText = 'ENTRY EDITION';
-    } else if (license?.IsLicensed === 'false') {
-        badgeText = 'TEAM EDITION';
-    }
-
     return (
         <ProductBrandingFreeEditionContainer tabIndex={-1}>
             <StyledLogo
                 src={LexocratesLogoHorizontalLight}
                 alt='Lexocrates Connect'
             />
-            <Badge>{badgeText}</Badge>
         </ProductBrandingFreeEditionContainer>
     );
 };
